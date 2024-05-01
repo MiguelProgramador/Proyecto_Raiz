@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script scr="java.js"></script>
+    <link rel="stylesheet" href="style.css">   
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+</head>
+<body>
+    <center>
+        <a href="index.html"><img src="cancheros.png"></a>
+    </center> 
+    <center><img src="cancha.jpg"></center> 
+    <div id="mensaje-bienvenida">
+        <p><strong>Bienvenidos al espacio de reserva exclusivo de la cancha zonal de bonanza</strong></p>
+    </div>  
+    
+
+    <div id="contenedorFormulario">
+    
+        <form id="formularioEquipo" class="form-container" action="procesar_formulario.php" method="POST">            
+            <input type="hidden" id="nombre" name="nombre">
+            <input type="hidden" id="edad" name="edad">
+            <input type="hidden" id="phone" name="phone">
+            <input type="hidden" id="email" name="email">
+            <input type="hidden" id="doc" name="doc">
+            <input type="hidden" id="rs" name="rs">
+            <input type="hidden" id="phone2" name="phone2">
+            <input type="hidden" id="email2" name="email2">
+            <input type="hidden" id="pass2" name="pass2">
+            <input type="hidden" id="nit" name="nit">
+            <input type="hidden" id="deporte" name="deporte">
+            <input type="hidden" id="integrantes" name="integrantes">
+            <input type="hidden" id="arbibraje" name="arbibraje">
+            <input type="hidden" id="colorUniforme" name="colorUniforme">
+            <input type="hidden" id="fechaAlquiler" name="fechaAlquiler">
+            <input type="hidden" id="horaAlquiler" name="horaAlquiler">
+            <input type="hidden" id="canchaseleccionada" name="canchaseleccionada">
+            <table>
+                <tr>
+                    <td style="width: 50%;"><label for="futbol">UTILERIA</label></td>
+                    <td style="width: 50%;"></td>
+                </tr>
+                <tr>           
+                    <td><label for="Petos">Petos:</label></td>
+                </tr>
+                <tr>           
+                    <td><input type="number" id="Petos" name="Petos" required></td>
+                </tr>
+                <tr>           
+                    <td><label for="Balones">Balones:</label></td>
+                </tr>
+                <tr>           
+                    <td><input type="number" id="Balones" name="Balones" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                      <label for="escanerDocumento">Escáner de documento:</label><br>
+                      <input type="file" id="escanerDocumento" name="escanerDocumento" accept="image/*" required>
+                    </td>
+                </tr>                
+                <tr>
+                    <td colspan="2"><input type="submit" class="mi-boton" value="Enviar"></td>
+                </tr>
+              </table>
+        </form>
+    </div>
+    <script>
+        // Llenar los campos ocultos con los valores almacenados en localStorage
+        document.getElementById("nombre").value = localStorage.getItem("nombre");
+        document.getElementById("edad").value = localStorage.getItem("edad");
+        document.getElementById("phone").value = localStorage.getItem("phone");
+        document.getElementById("email").value = localStorage.getItem("email");
+        document.getElementById("doc").value = localStorage.getItem("doc");
+        document.getElementById("pass").value = localStorage.getItem("pass");
+        document.getElementById("rs").value = localStorage.getItem("rs");
+        document.getElementById("phone2").value = localStorage.getItem("phone2");
+        document.getElementById("email2").value = localStorage.getItem("email2");
+        document.getElementById("pass2").value = localStorage.getItem("pass2");
+        document.getElementById("nit").value = localStorage.getItem("nit");
+        document.getElementById("deporte").value = localStorage.getItem("deporte");
+        document.getElementById("integrantes").value = localStorage.getItem("integrantes");
+        document.getElementById("arbibraje").value = localStorage.getItem("arbibraje");
+        document.getElementById("colorUniforme").value = localStorage.getItem("colorUniforme");
+        document.getElementById("fechaAlquiler").value = localStorage.getItem("fechaAlquiler");
+        document.getElementById("horaAlquiler").value = localStorage.getItem("horaAlquiler");
+        document.getElementById("canchaseleccionada").value = localStorage.getItem("canchaseleccionada");
+        
+        // Puedes llenar más campos ocultos si es necesario
+    
+        // Borrar los datos de localStorage después de enviar el formulario
+        document.getElementById("formularioFinal").addEventListener("submit", function() {
+          localStorage.clear();
+        });
+      </script>
+</body>
+
+</div>
+</html>
